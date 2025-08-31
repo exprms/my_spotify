@@ -36,11 +36,13 @@ for playlist in playlists['items']:
         track = item['track']
         if track:
             all_data.append({
-                "playlist": playlist_name,
-                "track_name": track['name'],
-                "artist": track['artists'][0]['name'],
-                "album": track['album']['name']
-            })
+            "playlist": playlist_name,
+            "track_name": track['name'],
+            "artist": track['artists'][0]['name'],
+            "album": track['album']['name'],
+            "track_id": track['id'],       # Spotify track ID
+            "album_id": track['album']['id']  # Spotify album ID
+        })
 
 # Save to CSV (best format for importing elsewhere)
 df = pd.DataFrame(all_data)
