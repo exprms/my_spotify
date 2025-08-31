@@ -1,4 +1,4 @@
 .env
 /bin/*
-.csv
-.json
+*.csv
+*.json
