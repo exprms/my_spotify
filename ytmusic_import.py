@@ -24,12 +24,14 @@ for key, values in data.items():
 
 
 # custom playlist Filter:
-wanted_lists = ['.Erinnerungen','BassLines','Silvester24','Summer 24','Dream Setlist by Winston','Nov2023','Meine Playlist Nr. 47','Cannibal corpse tour 2023','Div','Drum Practice','Krimis & Thriller','Spring 2022','My classic','Mallnitz','Shazam','OWRRB1','Real Metal','Austropop Schmankerl','Hey Good Morning','Emotional 2.0','On Tour','Party Bergwerk','Süvesta','Autofahren','gestolpert','Neu klassik','SW Live Vienna 2018','Hörbücher gehört','Weihnachten 2017','Crossfit 2016','Emotional','Collection 20172018','New 1017']
+# enter here the names you really want to convert
+# leave it blank if you convert all
+wanted_lists = []
 
 # for each playlist search songs:
 for playlist in yt_dict.keys():
     
-    if playlist in wanted_lists:
+    if (playlist in wanted_lists) or len(wanted_lists)==0:
         print(f"prepare {playlist}...")
         song_ids = []    
         for song in yt_dict[playlist]:
